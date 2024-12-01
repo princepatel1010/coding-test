@@ -1,0 +1,24 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore build output directories
+dist/
+build/
+
+# Ignore frontend build files
+frontend/dist/
+
+# Ignore specific files
+frontend/.env
+backend/.env
+
+# Ignore specific file types
+*.min.js
+*.min.css
+
+# Ignore generated files
+frontend/.next/
+frontend/out/
+
+# Ignore specific file or directories for certain rules
+frontend/src/components/*.test.js

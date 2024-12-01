@@ -1,0 +1,64 @@
+components:
+  schemas:
+    RecentlyViewedProduct:
+      type: object
+      properties:
+        productId:
+          type: string
+        timestamp:
+          type: string
+          format: date-time
+      example:
+        productId: "12345"
+        timestamp: "2024-12-01T12:00:00Z"
+
+  responses:
+    RecentlyViewedProducts:
+      description: List of recently viewed products for the user
+      content:
+        application/json:
+          schema:
+            type: array
+            items:
+              $ref: "#/components/schemas/RecentlyViewedProduct"
+          example:
+            - productId: "12345"
+              timestamp: "2024-12-01T12:00:00Z"
+            - productId: "67890"
+              timestamp: "2024-12-01T12:10:00Z"
+
+    Unauthorized:
+      description: Unauthorized access
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          example:
+            code: 401
+            message: "Please authenticate"
+
+    Forbidden:
+      description: Forbidden access
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          example:
+            code: 403
+            message: "Forbidden"
+
+    NotFound:
+      description: Not found
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/Error"
+          example:
+            code: 404
+            message: "User not found"
+
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT

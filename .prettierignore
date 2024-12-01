@@ -1,0 +1,9 @@
+node_modules/
+dist/
+build/
+frontend/dist/
+*.env
+frontend/.env
+backend/.env
+*.min.js
+*.min.css
