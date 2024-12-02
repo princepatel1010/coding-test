@@ -1,5 +1,3 @@
-I'll provide the entire markdown content in a single block that you can directly copy and paste:
-
 # Product View Tracker
 
 A containerized Node.js application that integrates Firebase and Redis to track and display recently viewed products for authenticated users.
@@ -36,15 +34,15 @@ cd product-view-tracker
 
 Create a `.env` file in the root directory with the following content:
 
-VITE_FIREBASE_API_KEY=your_api_key
-VITE_FIREBASE_AUTH_DOMAIN=your_auth_domain
-VITE_FIREBASE_PROJECT_ID=your_project_id
-VITE_FIREBASE_STORAGE_BUCKET=your_storage_bucket
-VITE_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
-VITE_FIREBASE_APP_ID=your_app_id
-REDIS_HOST=redis
-REDIS_PORT=6379
 PORT=8000
+REDIS_HOST=localhost
+REDIS_PORT=6379
+REDIS_PASSWORD=""
+SMTP_HOST=
+SMTP_PORT=
+SMTP_USERNAME=
+SMTP_PASSWORD=
+EMAIL_FROM=
 
 #### Frontend
 
@@ -69,7 +67,15 @@ Build and start the Docker containers:
 
 docker-compose up --build
 
-The application will be available at: http://localhost:8000
+## Application Access
+
+- **Backend API:** http://localhost:8000
+- **Frontend Application:** http://localhost:8000
+
+### Test Credentials
+
+- **Email:** test@email.com
+- **Password:** Test@123
 
 ## Usage
 
